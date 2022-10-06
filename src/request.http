@@ -1,0 +1,10 @@
+POST http://localhost:4001/link
+content-type: application/json
+
+{
+    "link": "https://www.youtube.com/watch?v=fm4_EuCsQwg"
+}
+
+###
+
+# GET http://localhost:4001/link
