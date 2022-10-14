@@ -1,4 +1,5 @@
 const ShortenerService = require("../services/ShortenerService");
+const knex = require("../database");
 
 const insertLink = async (request, response) => {
   try {
@@ -13,7 +14,7 @@ const insertLink = async (request, response) => {
 const getShortLink = async (request, response) => {
   try {
     const { string } = request.params;
-    const result = ShortenerService.gettingURL(string);
+    const result = await ShortenerService.gettingURL(string);
     response.redirect(result);
   } catch (error) {
     response.status(404).json(error.message);

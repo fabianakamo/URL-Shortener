@@ -3,7 +3,7 @@ const router = require("../src/routes/routes");
 const app = express();
 
 app.use(express.json());
-app.use(router);
+app.use(router.router);
 
 // app.post("/link", (request, response) => {
 //   const { link } = request.body;
