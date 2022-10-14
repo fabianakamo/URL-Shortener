@@ -19,6 +19,11 @@ app.get("/", (request, response) => {
   return response.json({ message: "Solutions Lab: Encurtador de Links" });
 });
 
+app.use((error, request, response, next) => {
+  response.status(error.status || 500);
+  response.json({ error: error.message });
+});
+
 const PORT = 4001;
 
 app.listen(PORT, () => {
